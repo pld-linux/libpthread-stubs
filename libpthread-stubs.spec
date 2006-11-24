@@ -1,9 +1,10 @@
 Summary:	pthread library helper
+Summary(pl):	Pakiet pomocniczy biblioteki pthread
 Name:		libpthread-stubs
 Version:	0.1
 Release:	1
 License:	MIT
-Group:		Libraries
+Group:		Development/Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 # Source0-md5:	774eabaf33440d534efe108ef9130a7d
 URL:		http://xcb.freedesktop.org/
@@ -20,6 +21,19 @@ platforms which already supply all the necessary pthread stubs, this
 package ships only the pkg-config file pthread-stubs.pc, to allow
 libraries to unconditionally express a dependency on pthread-stubs and
 still obtain correct behavior.
+
+%description -l pl
+Ta biblioteka udostêpnia s³abe aliasy dla funkcji pthread nie
+dostarczane domy¶lnie przez libc lub w inny sposób. Biblioteki takie
+jak libxcb polegaj± na za¶lepkach pthread, aby opcjonalnie u¿ywaæ
+w±tków pthread i zachowywaæ siê bezpiecznie w przypadku zlinkowania z
+libpthread, a unikaæ narzutu czasowego przy dzia³aniu jednow±tkowym.
+libpthread-stubs obs³uguje to zachowanie nawet na platformach nie
+udostêpniaj±cych wszystkich potrzebnych za¶lepek pthread. Na
+platformach udostêpniaj±cych wszystkie potrzebne za¶lepki pthread ten
+pakiet dostarcza jedynie plik pkg-configa pthread-stubs.pc pozwalaj±cy
+bibliotekom bezwarunkowo zawieraæ zale¿no¶æ od pthread-stubs i nadal
+zachowywaæ siê prawid³owo.
 
 %prep
 %setup -q
