@@ -1,5 +1,5 @@
 Summary:	pthread library helper
-Summary(pl):	Pakiet pomocniczy biblioteki pthread
+Summary(pl.UTF-8):   Pakiet pomocniczy biblioteki pthread
 Name:		libpthread-stubs
 Version:	0.1
 Release:	1
@@ -22,18 +22,18 @@ package ships only the pkg-config file pthread-stubs.pc, to allow
 libraries to unconditionally express a dependency on pthread-stubs and
 still obtain correct behavior.
 
-%description -l pl
-Ta biblioteka udostêpnia s³abe aliasy dla funkcji pthread nie
-dostarczane domy¶lnie przez libc lub w inny sposób. Biblioteki takie
-jak libxcb polegaj± na za¶lepkach pthread, aby opcjonalnie u¿ywaæ
-w±tków pthread i zachowywaæ siê bezpiecznie w przypadku zlinkowania z
-libpthread, a unikaæ narzutu czasowego przy dzia³aniu jednow±tkowym.
-libpthread-stubs obs³uguje to zachowanie nawet na platformach nie
-udostêpniaj±cych wszystkich potrzebnych za¶lepek pthread. Na
-platformach udostêpniaj±cych wszystkie potrzebne za¶lepki pthread ten
-pakiet dostarcza jedynie plik pkg-configa pthread-stubs.pc pozwalaj±cy
-bibliotekom bezwarunkowo zawieraæ zale¿no¶æ od pthread-stubs i nadal
-zachowywaæ siê prawid³owo.
+%description -l pl.UTF-8
+Ta biblioteka udostÄ™pnia sÅ‚abe aliasy dla funkcji pthread nie
+dostarczane domyÅ›lnie przez libc lub w inny sposÃ³b. Biblioteki takie
+jak libxcb polegajÄ… na zaÅ›lepkach pthread, aby opcjonalnie uÅ¼ywaÄ‡
+wÄ…tkÃ³w pthread i zachowywaÄ‡ siÄ™ bezpiecznie w przypadku zlinkowania z
+libpthread, a unikaÄ‡ narzutu czasowego przy dziaÅ‚aniu jednowÄ…tkowym.
+libpthread-stubs obsÅ‚uguje to zachowanie nawet na platformach nie
+udostÄ™pniajÄ…cych wszystkich potrzebnych zaÅ›lepek pthread. Na
+platformach udostÄ™pniajÄ…cych wszystkie potrzebne zaÅ›lepki pthread ten
+pakiet dostarcza jedynie plik pkg-configa pthread-stubs.pc pozwalajÄ…cy
+bibliotekom bezwarunkowo zawieraÄ‡ zaleÅ¼noÅ›Ä‡ od pthread-stubs i nadal
+zachowywaÄ‡ siÄ™ prawidÅ‚owo.
 
 %prep
 %setup -q
