@@ -1,5 +1,5 @@
 Summary:	pthread library helper
-Summary(pl.UTF-8):   Pakiet pomocniczy biblioteki pthread
+Summary(pl.UTF-8):	Pakiet pomocniczy biblioteki pthread
 Name:		libpthread-stubs
 Version:	0.1
 Release:	1
