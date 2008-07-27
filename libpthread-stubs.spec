@@ -2,7 +2,7 @@ Summary:	pthread library helper
 Summary(pl.UTF-8):	Pakiet pomocniczy biblioteki pthread
 Name:		libpthread-stubs
 Version:	0.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
