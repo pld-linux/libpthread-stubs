@@ -48,8 +48,8 @@ Header files and documentation for libpthread-stubs.
 Pliki nagłówkowe i dokumentacja do libpthread-stubs.
 
 %package static
-Summary:	Static libpcap library
-Summary(pl.UTF-8):	Biblioteka statyczna libpcap
+Summary:	Static libpthread-stubs library
+Summary(pl.UTF-8):	Biblioteka statyczna libpthread-stubs
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
