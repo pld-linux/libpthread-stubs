@@ -4,7 +4,7 @@ Name:		libpthread-stubs
 Version:	0.2
 Release:	1
 License:	MIT
-Group:		Development/Libraries
+Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 # Source0-md5:	2ba9ce2d46da0a2a1090384ece3387ff
 URL:		http://xcb.freedesktop.org/
@@ -36,22 +36,22 @@ bibliotekom bezwarunkowo zawierać zależność od pthread-stubs i nadal
 zachowywać się prawidłowo.
 
 %package devel
-Summary:	Header files and develpment documentation for libpthread-stubs
-Summary(pl.UTF-8):	Pliki nagłówkowe i dokumetacja do libpthread-stubs
+Summary:	Development files for libpthread-stubs
+Summary(pl.UTF-8):	Pliki programistyczne biblioteki libpthread-stubs
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Header files and documentation for libpthread-stubs.
+Development files for libpthread-stubs.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe i dokumentacja do libpthread-stubs.
+Pliki programistyczne biblioteki libpthread-stubs.
 
 %package static
 Summary:	Static libpthread-stubs library
 Summary(pl.UTF-8):	Biblioteka statyczna libpthread-stubs
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This package contains the static library used for development.
@@ -75,20 +75,21 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{_libdir}/lib*.so.*
+%doc COPYING README
+%attr(755,root,root) %{_libdir}/libpthread-stubs.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libpthread-stubs.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%{_pkgconfigdir}/*.pc
-%{_libdir}/lib*.la
-%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/libpthread-stubs.so
+%{_libdir}/libpthread-stubs.la
+%{_pkgconfigdir}/pthread-stubs.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libpthread-stubs.a
