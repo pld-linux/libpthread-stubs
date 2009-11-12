@@ -1,13 +1,15 @@
 Summary:	pthread library helper
 Summary(pl.UTF-8):	Pakiet pomocniczy biblioteki pthread
 Name:		libpthread-stubs
-Version:	0.2
+Version:	0.3
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	2ba9ce2d46da0a2a1090384ece3387ff
+# Source0-md5:	e8fa31b42e13f87e8f5a7a2b731db7ee
 URL:		http://xcb.freedesktop.org/
+Obsoletes:	libpthread-stubs-devel < 0.3
+Obsoletes:	libpthread-stubs-static < 0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,30 +37,6 @@ pakiet dostarcza jedynie plik pkg-configa pthread-stubs.pc pozwalający
 bibliotekom bezwarunkowo zawierać zależność od pthread-stubs i nadal
 zachowywać się prawidłowo.
 
-%package devel
-Summary:	Development files for libpthread-stubs
-Summary(pl.UTF-8):	Pliki programistyczne biblioteki libpthread-stubs
-Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-
-%description devel
-Development files for libpthread-stubs.
-
-%description devel -l pl.UTF-8
-Pliki programistyczne biblioteki libpthread-stubs.
-
-%package static
-Summary:	Static libpthread-stubs library
-Summary(pl.UTF-8):	Biblioteka statyczna libpthread-stubs
-Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
-
-%description static
-This package contains the static library used for development.
-
-%description static -l pl
-Biblioteka statyczna libpthread-stubs.
-
 %prep
 %setup -q
 
@@ -75,21 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
-
 %files
 %defattr(644,root,root,755)
 %doc COPYING README
-%attr(755,root,root) %{_libdir}/libpthread-stubs.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libpthread-stubs.so.0
-
-%files devel
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libpthread-stubs.so
-%{_libdir}/libpthread-stubs.la
 %{_pkgconfigdir}/pthread-stubs.pc
-
-%files static
-%defattr(644,root,root,755)
-%{_libdir}/libpthread-stubs.a
