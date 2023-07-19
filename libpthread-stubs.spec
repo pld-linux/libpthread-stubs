@@ -1,13 +1,15 @@
 Summary:	Meta package for pthread symbols
 Summary(pl.UTF-8):	Metapakiet zapewniający symbole pthread
 Name:		libpthread-stubs
-Version:	0.4
+Version:	0.5
 Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	https://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	48c1544854a94db0e51499cc3afd797f
+Source0:	https://xcb.freedesktop.org/dist/%{name}-%{version}.tar.xz
+# Source0-md5:	d42052cb343c3e050ff40adc1675e79f
 URL:		https://xcb.freedesktop.org/
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Obsoletes:	libpthread-stubs-devel < 0.3
 Obsoletes:	libpthread-stubs-static < 0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
